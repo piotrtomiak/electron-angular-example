@@ -1,0 +1,15 @@
+{
+  "extends": "../tslint.json",
+  "rulesDirectory": [
+    "node_modules/nz-tslint-rules"
+  ],
+  "rules": {
+    "deprecation": {
+      "severity": "warning"
+    },
+    "no-console": [
+      false
+    ],
+    "nz-secondary-entry-imports": true
+  }
+}

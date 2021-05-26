@@ -1,0 +1,48 @@
+{
+  "appId": "com.application.desktop",
+  "productName": "Application",
+  "directories": {
+    "buildResources": "resources",
+    "output": "../../dist/"
+  },
+  "extraMetadata": {
+    "main": "main.js"
+  },
+  "artifactName": "${productName}-${version}.${ext}",
+  "asarUnpack": [],
+  "afterSign": "./resources/scripts/notarize.js",
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "allowElevation": true
+  },
+  "win": {
+    "target": [
+      "nsis"
+    ],
+    "extraFiles": []
+  },
+  "mac": {
+    "target": [
+      "default"
+    ],
+    "identity": null,
+    "entitlements": "resources/mac/entitlements.mac.plist",
+    "entitlementsInherit": "resources/mac/entitlements.mac.plist",
+    "hardenedRuntime": true,
+    "gatekeeperAssess": false,
+    "extraFiles": []
+  },
+  "dmg": {
+  },
+  "linux": {
+    "target": [
+      "AppImage"
+    ],
+    "extraFiles": []
+  },
+  "publish": {
+    "provider": "generic",
+    "url": "https://update.my-application.com"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "extends": "tslint:recommended",
+  "defaultSeverity": "warning",
+  "rules": {
+    "max-line-length": [
+      true,
+      140
+    ],
+    "member-access": false,
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "static-field",
+          "instance-field",
+          "static-method",
+          "instance-method"
+        ]
+      }
+    ],
+    "no-consecutive-blank-lines": false,
+    "no-console": [
+      true
+    ],
+    "no-empty": false,
+    "no-inferrable-types": [
+      true,
+      "ignore-params"
+    ],
+    "no-unnecessary-callback-wrapper": true,
+    "type-literal-delimiter": [
+      true,
+      {
+        "singleLine": "never"
+      }
+    ],
+    "import-spacing": true,
+    "semicolon": true,
+    "no-non-null-assertion": false,
+    "no-redundant-jsdoc": true,
+    "no-switch-case-fall-through": true,
+    "no-var-requires": false,
+    "object-literal-key-quotes": [
+      true,
+      "as-needed"
+    ],
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "quotemark": [
+      true,
+      "double"
+    ],
+    "trailing-comma": false,
+    "arrow-parens": false,
+    "interface-name": false
+  }
+}

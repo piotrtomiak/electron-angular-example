@@ -1,0 +1,9 @@
+{
+  "extends": "../tsconfig.json",
+  "compileOnSave": false,
+  "angularCompilerOptions": {
+    "disableTypeScriptVersionCheck": true,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}

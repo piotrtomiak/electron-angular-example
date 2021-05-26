@@ -1,0 +1,10 @@
+<ng-container *ngIf="profiles$ | async as profiles">
+  Profiles:
+  <ul>
+    <li *ngFor="let profile of profiles">
+      <a routerLink="/profiles/{{profile.id}}" routerLinkActive="active">{{profile.name}} {{profile.surname}}</a>
+    </li>
+    <li><a routerLink="/profiles/new" routerLinkActive="active">Create new profile</a></li>
+  </ul>
+  <router-outlet></router-outlet>
+</ng-container>

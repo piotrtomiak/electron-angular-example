@@ -1,0 +1,13 @@
+{
+  "CommandFailed": "Command failed",
+  "DebugEventBroadcast": "Event broadcast to clients: {0}",
+  "DebugMessageProcessFinished": "Finished processing of a message with result: {0}",
+  "DebugMessageProcessStarted": "Started processing of a message: {0}",
+  "ErrorStoppingServer": "Error sopping server: {0}",
+  "FailedToRouteMessage": "Failed to route message",
+  "StringMessageExpected": "Expected string message, but received: {0}",
+  "QueryFailed": "Query failed",
+  "ServerError": "Server error",
+  "ServerStarted": "🚀 Server started on port {0}",
+  "ServerStopped": "Server stopped"
+}

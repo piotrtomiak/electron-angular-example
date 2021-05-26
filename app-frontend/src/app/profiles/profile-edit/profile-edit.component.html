@@ -1,0 +1,18 @@
+<form [formGroup]="form">
+  <label for="name">Name:</label>
+  <input formControlName="name" id="name" name="name" placeholder="Enter user name"/><br/>
+  <label for="surname">Surname:</label>
+  <input formControlName="surname" id="surname" name="surname" placeholder="Enter user surname"/>
+
+  <div class="standard-actions">
+    <button (click)="onCancelClicked()" *ngIf="currentProfile !== undefined">
+      Cancel
+    </button>
+    <button (click)="onDeleteClicked()" *ngIf="currentProfile !== undefined">
+      Delete
+    </button>
+    <button (click)="onSaveClicked()" [disabled]="!form.valid">
+      {{currentProfile === undefined ? "Create" : "Save changes"}}
+    </button>
+  </div>
+</form>

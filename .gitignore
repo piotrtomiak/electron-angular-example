@@ -1,0 +1,8 @@
+# System
+.DS_Store
+# Project
+app-backend/data/
+dist/
+build/
+node_modules/
+deps/

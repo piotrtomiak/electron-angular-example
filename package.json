@@ -1,0 +1,32 @@
+{
+  "name": "application",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "clean": "rm -Rf ./build/desktop",
+
+    "build:common": "rm -Rf build/desktop/node_modules/app-common/* && mkdirp build/desktop/node_modules/app-common/ && cd app-common && yarn && yarn run build && cd .. && cp -R app-common/* build/desktop/node_modules/app-common && rm -Rf build/desktop/node_modules/app-common/node_modules && rm -Rf build/desktop/node_modules/app-common/yarn.lock",
+    "build:backend": "rm -Rf build/desktop/node_modules/app-backend/* && mkdirp build/desktop/node_modules/app-backend/ && cd app-backend && yarn && yarn run build && cd .. && cp -R app-backend/* build/desktop/node_modules/app-backend && rm -Rf build/desktop/node_modules/app-backend/node_modules && rm -Rf build/desktop/node_modules/app-backend/yarn.lock",
+    "build:frontend": "rm -Rf build/desktop/app-frontend && mkdirp build/desktop && cd app-frontend && yarn && yarn run build:desktop && cd .. && cp -R app-frontend/dist/app-frontend build/desktop/app-frontend",
+    "build:electron": "cd app-electron && sh ./build.sh",
+    "build": "yarn && yarn run build:common && yarn run build:backend && yarn run build:frontend && yarn run build:electron",
+
+    "package:desktop": "cd ./build/desktop && node node_modules/electron-builder/out/cli/cli.js build -p never && cd ../..",
+    "release:desktop": "cd ./build/desktop && node node_modules/electron-builder/out/cli/cli.js -p never && cd ../..",
+
+    "lint": "tslint --project app-backend && tslint --project app-common && tslint --project app-electron && tslint --project app-frontend",
+    "lint:fix": "tslint --fix --project app-backend && tslint --fix --project app-common && tslint --fix --project app-electron && tslint --fix --project app-frontend",
+
+    "configure:local-pkgs": "./scripts/link-local-pkgs.sh"
+  },
+  "devDependencies": {
+    "@types/node": "14.14.14",
+    "@types/semver": "7.3.4",
+    "mkdirp": "1.0.4",
+    "semver": "7.3.4",
+    "ts-node": "9.1.1",
+    "tslint": "6.1.2",
+    "typescript": "4.1.3"
+  },
+  "dependencies": {}
+}
