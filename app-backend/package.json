@@ -7,8 +7,7 @@
   "scripts": {
     "build": "rm -Rf ./dist && tsc",
     "serve": "mkdir -p ./data && yarn run build && cd './data' && node ../dist/main.js",
-    "start": "yarn run serve",
-    "test": "cd spec && jasmine-ts --project tsconfig.json --config=jasmine.json"
+    "start": "yarn run serve"
   },
   "dependencies": {
     "colors": "1.4.0",

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "build": "rm -Rf ./dist && yarn && tsc",
-    "start": "yarn run build && mkdir -p data && cd data && electron ../dist/main.js --dev"
+    "start": "yarn run build && mkdir -p data && cd data && electron ../dist/main.js --dev",
+    "start:rebuild": "cd ../app-common && yarn build && cd ../app-backend && yarn build && cd ../app-electron && yarn start"
   },
   "keywords": [
     "instagram"
